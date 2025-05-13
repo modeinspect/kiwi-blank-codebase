@@ -1,0 +1,11 @@
+/* eslint-disable */
+"use client";
+import * as React from "react";
+import createIcon from "../Icon/createIcon";
+export default createIcon(
+  <>
+    <path d="M4.15 9.892C4.15 5.572 7.722 2 12.042 2s7.892 3.572 7.809 7.892c0 5.483-5.4 10.384-7.061 11.797-.416.415-1.08.415-1.579 0C9.55 20.276 4.15 15.292 4.15 9.892Zm7.892 4.57a1.1 1.1 0 0 0 1.08-1.08V6.07a1.1 1.1 0 0 0-1.08-1.08 1.1 1.1 0 0 0-1.08 1.08v7.31a1.1 1.1 0 0 0 1.08 1.08Z" />
+  </>,
+  "0 0 24 24",
+  "LocationI",
+);
