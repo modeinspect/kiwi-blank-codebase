@@ -98,8 +98,8 @@ const Stack = (props: Props) => {
     vars["--mm-basis"] != null && "mm:basis-[var(--mm-basis)]",
     vars["--lm-basis"] != null && "lm:basis-[var(--lm-basis)]",
     vars["--tb-basis"] != null && "tb:basis-[var(--tb-basis)]",
-    vars["--de:basis"] != null && "de:basis-[var(--de-basis)]",
-    vars["--ld:basis"] != null && "ld:basis-[var(--ld-basis)]",
+    vars["--de-basis"] != null && "de:basis-[var(--de-basis)]",
+    vars["--ld-basis"] != null && "ld:basis-[var(--ld-basis)]",
   ];
 
   const getProperty = React.useCallback(
@@ -161,7 +161,7 @@ const Stack = (props: Props) => {
       data-test={dataTest}
       style={vars}
       className={cx(
-        "orbit-stack",
+        "orbit-stack px-200 py-1200",
         getTailwindTokensForMedia(defaultMediaProps),
         ...varClasses,
         Object.values(QUERIES).map((viewport, index, viewports) => {
