@@ -47,7 +47,7 @@ export default function Card({
       id={id}
       className={cx(
         "orbit-card font-base bg-white-normal *:border-elevation-flat-border-color lm:first:*:rounded-t-100 lm:last:*:rounded-b-100 w-full first:*:border-t",
-        spaceAfter != null && spaceAfterClasses[spaceAfter],
+        spaceAfter != null && spaceAfterClasses[spaceAfter]
       )}
       data-test={dataTest}
       style={marginStyles}
@@ -67,7 +67,11 @@ export default function Card({
         </div>
       )}
 
-      {!loading && children}
+      {!loading && children && (
+        <div className="px-[76px] py-[33px] lm:border-x border-b">
+          {children}
+        </div>
+      )}
 
       {loading && (
         <div className="lm:border-x border-b">
