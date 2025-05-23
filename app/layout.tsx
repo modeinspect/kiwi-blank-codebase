@@ -1,8 +1,9 @@
 import './globals.css';
 import type { Metadata } from 'next';
+import * as React from 'react';
 import { Roboto } from 'next/font/google';
-import StyledComponentsRegistry from '@/lib/registry';
 import Provider from '@/lib/provider';
+import StyledComponentsRegistry from '@/lib/registry';
 
 const roboto = Roboto({ weight: '400', subsets: ['latin'] });
 
@@ -19,9 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <Provider>
-          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-        </Provider>
+      <Provider>
+        <StyledComponentsRegistry>
+          {children}
+        </StyledComponentsRegistry>
+      </Provider>
       </body>
     </html>
   );

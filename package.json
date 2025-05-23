@@ -28,5 +28,8 @@
     "styled-components": "^5.3.11",
     "tailwindcss": "^3.4.4",
     "typescript": "5.3.3"
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.34"
   }
 }

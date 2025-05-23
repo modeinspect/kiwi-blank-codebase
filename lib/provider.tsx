@@ -1,17 +1,19 @@
-'use client';
+"use client";
 
-import * as React from 'react';
-import OrbitProvider from '@kiwicom/orbit-components/lib/OrbitProvider';
-import { defaultTheme } from '@kiwicom/orbit-components/lib';
-
-export default function Provider({
-  children,
-}: {
-  children: React.ReactNode | React.ReactNode[];
-}): JSX.Element {
-  return (
-    <OrbitProvider theme={defaultTheme} useId={React.useId}>
-      {children}
-    </OrbitProvider>
-  );
+import { OrbitProvider } from "@kiwicom/orbit-components";
+import { defaultTheme } from "@kiwicom/orbit-components";
+import * as React from "react";
+import RandomIdProvider from '@kiwicom/orbit-components/lib/OrbitProvider/RandomId/Provider';
+export default function KiwiOrbitProvider({
+                                          children,
+                                      }: {
+    children: React.ReactNode;
+}) {
+    return (
+        <OrbitProvider theme={defaultTheme} useId={React.useId}>
+            <RandomIdProvider useId={React.useId}>
+                {children}
+            </RandomIdProvider>
+        </OrbitProvider>
+    );
 }
