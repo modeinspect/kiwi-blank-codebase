@@ -4,6 +4,7 @@ import * as React from 'react';
 import { Roboto } from 'next/font/google';
 import Provider from '@/lib/provider';
 import StyledComponentsRegistry from '@/lib/registry';
+import {ToastRoot} from "@kiwicom/orbit-components";
 
 const roboto = Roboto({ weight: '400', subsets: ['latin'] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
         <StyledComponentsRegistry>
           {children}
         </StyledComponentsRegistry>
+        <ToastRoot />
       </Provider>
       </body>
     </html>

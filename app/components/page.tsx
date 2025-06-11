@@ -6,6 +6,7 @@ import {
   Alert,
   Badge,
   BadgeList,
+  BadgeListItem,
   Breadcrumbs,
   BreadcrumbsItem,
   Button,
@@ -13,16 +14,21 @@ import {
   ButtonLink,
   ButtonMobileStore,
   CallOutBanner,
-  Card,
+  CarrierLogo,
   Checkbox,
+  ChoiceGroup,
   Collapse,
+  CountryFlag,
   Coupon,
+  Illustration,
   InputField,
   InputFile,
+  InputGroup,
+  InputSelect,
   List,
   ListItem,
-  ListChoice,
   Loading,
+  Pagination,
   Radio,
   Seat,
   SegmentedSwitch,
@@ -33,55 +39,32 @@ import {
   SocialButton,
   Stepper,
   Switch,
-  Tabs,
   Tab,
+  Table,
+  TableBody,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableRow,
   TabList,
   TabPanel,
   TabPanels,
-  Table,
-  TableHead,
-  TableRow,
-  TableBody,
-  TableCell,
-  Tag,
-  Text,
+  Tabs,
   Textarea,
-  TextLink,
   Tile,
   TileGroup,
-  //   Toast,
-  Tooltip,
-  Illustration,
-  CarrierLogo,
-  ChoiceGroup,
-  CountryFlag,
-  FeatureIcon,
-  InputGroup,
-  InputSelect,
-  ItinerarySegmentStop,
-  ItinerarySegmentDetail,
-  ItinerarySegment,
-  Itinerary,
-  ItineraryBadgeList,
-  ItineraryBadgeListItem,
-  NotificationBadge,
-  Pagination,
-  ServiceLogo,
   Timeline,
   TimelineStep,
+  Tooltip,
 } from "@kiwicom/orbit-components";
 
 import {
   Airplane,
   Check,
   ChevronDown,
-  Entertainment,
-  InformationCircle,
-  KiwiComGuarantee,
   NewWindow,
-  PowerPlug,
-  Wifi,
-  Seat as SeatIcon,
+  AlertCircle,
+  BaggageCabin,
 } from "@kiwicom/orbit-components/icons";
 
 const containerStyle = {
@@ -110,8 +93,12 @@ export default function Components() {
       </div>
       <div style={containerStyle}>
         <BadgeList>
-          <Badge type="info">One</Badge>
-          <Badge type="success">Two</Badge>
+          <BadgeListItem icon={<AlertCircle />}>
+            You're departing from a different place
+          </BadgeListItem>
+          <BadgeListItem icon={<BaggageCabin />}>
+            You must collect and recheck your baggage
+          </BadgeListItem>
         </BadgeList>
       </div>
       <div style={containerStyle}>
@@ -185,9 +172,6 @@ export default function Components() {
         />
       </div>
       <div style={containerStyle}>
-        <Card title="Card Title">Card Content</Card>
-      </div>
-      <div style={containerStyle}>
         <Checkbox label="Checkbox" />
       </div>
       <div style={containerStyle}>
@@ -214,9 +198,6 @@ export default function Components() {
       </div>
       <div style={containerStyle}>
         <CountryFlag code="anywhere" size="small" />
-      </div>
-      <div style={containerStyle}>
-        <FeatureIcon alt="Ticket Flexi" name="TicketFlexi" />
       </div>
       <div style={containerStyle}>
         <Coupon>COUPON2025</Coupon>
@@ -365,170 +346,13 @@ export default function Components() {
         </div>
       </div>
       <div style={containerStyle}>
-        <Itinerary>
-          <ItinerarySegment spaceAfter="medium">
-            <ItinerarySegmentStop
-              city="Moscow"
-              date="Fri, 19.10"
-              station="Sheremetyevo International Airport (SVO)"
-              time="14:05"
-            />
-            <ItinerarySegmentDetail
-              content={[
-                {
-                  items: [
-                    {
-                      icon: <Airplane size="small" />,
-                      name: "Carrier",
-                      value: "Ryanair",
-                    },
-                    {
-                      icon: <InformationCircle size="small" />,
-                      name: "Connection number",
-                      value: "RA 8345",
-                    },
-                  ],
-                  title: "Connection Info",
-                },
-                {
-                  items: [
-                    {
-                      icon: <SeatIcon size="small" />,
-                      name: "Seat pitch",
-                      value: "76cm",
-                    },
-                    {
-                      icon: <SeatIcon size="small" />,
-                      name: "Seat width",
-                      value: "43cm",
-                    },
-                    {
-                      icon: <SeatIcon size="small" />,
-                      name: "Seat recline",
-                      value: "7cm",
-                    },
-                    {
-                      icon: <Entertainment size="small" />,
-                      name: "Audio & video on demand",
-                      value: "No",
-                    },
-                    {
-                      icon: <PowerPlug size="small" />,
-                      name: "In-seat power",
-                      value: "No",
-                    },
-                    {
-                      icon: <Wifi size="small" />,
-                      name: "Wi-Fi on board",
-                      value: "No",
-                    },
-                  ],
-                  title: "Seating Info",
-                },
-              ]}
-              duration="2h 30m"
-              icon={<Airplane size="small" />}
-              summary={<Badge icon={<Airplane />}>Badge</Badge>}
-            />
-            <ItinerarySegmentStop
-              city="Prague"
-              date="Fri, 19.10"
-              station="Václav Havel Airport Prague (PRG)"
-              time="16:35"
-            />
-          </ItinerarySegment>
-          <ItineraryBadgeList spaceAfter="medium">
-            <ItineraryBadgeListItem icon={<KiwiComGuarantee />}>
-              Connection protected by the Kiwi.com Guarantee
-            </ItineraryBadgeListItem>
-          </ItineraryBadgeList>
-          <ItinerarySegment spaceAfter="large">
-            <ItinerarySegmentStop
-              city="Prague"
-              date="Sat, 20.10"
-              station="Václav Havel Airport Prague (PRG)"
-              time="11:05"
-            />
-            <ItinerarySegmentDetail
-              content={[
-                {
-                  items: [
-                    {
-                      icon: <Airplane size="small" />,
-                      name: "Carrier",
-                      value: "Ryanair",
-                    },
-                    {
-                      icon: <InformationCircle size="small" />,
-                      name: "Connection number",
-                      value: "RA 8345",
-                    },
-                  ],
-                  title: "Connection Info",
-                },
-                {
-                  items: [
-                    {
-                      icon: <SeatIcon size="small" />,
-                      name: "Seat pitch",
-                      value: "76cm",
-                    },
-                    {
-                      icon: <SeatIcon size="small" />,
-                      name: "Seat width",
-                      value: "43cm",
-                    },
-                    {
-                      icon: <SeatIcon size="small" />,
-                      name: "Seat recline",
-                      value: "7cm",
-                    },
-                    {
-                      icon: <Entertainment size="small" />,
-                      name: "Audio & video on demand",
-                      value: "No",
-                    },
-                    {
-                      icon: <PowerPlug size="small" />,
-                      name: "In-seat power",
-                      value: "No",
-                    },
-                    {
-                      icon: <Wifi size="small" />,
-                      name: "Wi-Fi on board",
-                      value: "No",
-                    },
-                  ],
-                  title: "Seating Info",
-                },
-              ]}
-              duration="2h 30m"
-              summary={<Badge icon={<Airplane />}>Badge</Badge>}
-            />
-            <ItinerarySegmentStop
-              city="Milan"
-              date="Fri, 20.10"
-              station="Milan Bergamo International Airport (BGY)"
-              time="16:35"
-              type="warning"
-            />
-          </ItinerarySegment>
-        </Itinerary>
-      </div>
-      <div style={containerStyle}>
         <List>
           <ListItem>List item one</ListItem>
           <ListItem>List item two</ListItem>
         </List>
       </div>
       <div style={containerStyle}>
-        <ListChoice title="ListChoice" description="A selectable list item" />
-      </div>
-      <div style={containerStyle}>
         <Loading />
-      </div>
-      <div style={containerStyle}>
-        <NotificationBadge>10</NotificationBadge>
       </div>
       <div style={containerStyle}>
         <Pagination
@@ -603,9 +427,6 @@ export default function Components() {
         <Separator />
       </div>
       <div style={containerStyle}>
-        <ServiceLogo id="ID" name="AirHelp" size="medium" />
-      </div>
-      <div style={containerStyle}>
         <Skeleton />
       </div>
       <div style={containerStyle}>
@@ -668,13 +489,7 @@ export default function Components() {
         </Table>
       </div>
       <div style={containerStyle}>
-        <Tag>Tag</Tag>
-      </div>
-      <div style={containerStyle}>
         <Textarea label="Textarea" />
-      </div>
-      <div style={containerStyle}>
-        <TextLink href="#">TextLink</TextLink>
       </div>
       <div style={containerStyle}>
         <Tile title="Tile" description="Tile description" />
