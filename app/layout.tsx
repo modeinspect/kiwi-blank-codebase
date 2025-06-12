@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import * as React from 'react';
 import { Roboto } from 'next/font/google';
 import Provider from '@/lib/provider';
+import MIReactNodeProvider from '@/lib/mi-react-node-provider';
 import StyledComponentsRegistry from '@/lib/registry';
 import {ToastRoot} from "@kiwicom/orbit-components";
 
@@ -22,10 +23,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={roboto.className}>
       <Provider>
-        <StyledComponentsRegistry>
-          {children}
-        </StyledComponentsRegistry>
-        <ToastRoot />
+        <MIReactNodeProvider>
+          <StyledComponentsRegistry>
+            {children}
+          </StyledComponentsRegistry>
+          <ToastRoot />
+        </MIReactNodeProvider>
       </Provider>
       </body>
     </html>
