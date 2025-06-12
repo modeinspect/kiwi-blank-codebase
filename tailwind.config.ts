@@ -1,5 +1,5 @@
 import type { Config } from 'tailwindcss';
-import orbitComponentsPreset from '@kiwicom/orbit-tailwind-preset';
+import orbitComponentsPreset from './lib/tailwind-preset/index.js';
 
 const config: Config = {
   content: [
