@@ -1,13 +1,97 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import * as React from 'react';
-import { Roboto } from 'next/font/google';
+import localFont from 'next/font/local';
 import Provider from '@/lib/provider';
 import MIReactNodeProvider from '@/lib/mi-react-node-provider';
 import StyledComponentsRegistry from '@/lib/registry';
 import {ToastRoot} from "@kiwicom/orbit-components";
 
-const roboto = Roboto({ weight: '400', subsets: ['latin'] });
+const circularXX = localFont({
+  src: [
+    {
+      path: '../public/fonts/CircularXX-Thin.otf',
+      weight: '100',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/CircularXX-ThinItalic.otf',
+      weight: '100',
+      style: 'italic',
+    },
+    {
+      path: '../public/fonts/CircularXX-Light.otf',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/CircularXX-LightItalic.otf',
+      weight: '300',
+      style: 'italic',
+    },
+    {
+      path: '../public/fonts/CircularXX-Regular.otf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/CircularXX-Italic.otf',
+      weight: '400',
+      style: 'italic',
+    },
+    {
+      path: '../public/fonts/CircularXX-Book.otf',
+      weight: '450',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/CircularXX-BookItalic.otf',
+      weight: '450',
+      style: 'italic',
+    },
+    {
+      path: '../public/fonts/CircularXX-Medium.otf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/CircularXX-MediumItalic.otf',
+      weight: '500',
+      style: 'italic',
+    },
+    {
+      path: '../public/fonts/CircularXX-Bold.otf',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/CircularXX-BoldItalic.otf',
+      weight: '700',
+      style: 'italic',
+    },
+    {
+      path: '../public/fonts/CircularXX-Black.otf',
+      weight: '900',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/CircularXX-BlackItalic.otf',
+      weight: '900',
+      style: 'italic',
+    },
+    {
+      path: '../public/fonts/CircularXX-ExtraBlack.otf',
+      weight: '950',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/CircularXX-ExtraBlackItalic.otf',
+      weight: '950',
+      style: 'italic',
+    },
+  ],
+  variable: '--font-base',
+});
 
 export const metadata: Metadata = {
   title: 'Kiwi Blank Codebase',
@@ -21,7 +105,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={roboto.className}>
+      <body className={circularXX.className}>
       <Provider>
         <MIReactNodeProvider>
           <StyledComponentsRegistry>
