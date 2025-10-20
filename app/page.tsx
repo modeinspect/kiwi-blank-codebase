@@ -166,12 +166,17 @@ export default function BookingPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4">
-      <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-md p-8">
+      <div className="max-w-2xl mx-auto mb-6">
+        <h1 className="text-4xl font-bold text-gray-900">
+          Booking Prototype
+        </h1>
+      </div>
+      <div className="max-w-2xl mx-auto rounded-lg shadow-md p-8 bg-[color:#ea8484ff]">
         <form onSubmit={handleSubmit}>
           <Stack spacing="800">
             {/* Header */}
             <div>
-              <Heading as="h1" type="title1" spaceAfter="small">
+              <Heading as="h2" type="title1" spaceAfter="small">
                 Passenger Details
               </Heading>
               <Text type="secondary">
