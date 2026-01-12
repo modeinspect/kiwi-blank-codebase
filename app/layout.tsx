@@ -6,6 +6,7 @@ import Provider from '@/lib/provider';
 import MIReactNodeProvider from '@/lib/mi-react-node-provider';
 import StyledComponentsRegistry from '@/lib/registry';
 import {ToastRoot} from "@kiwicom/orbit-components";
+import Button from "@kiwicom/orbit-components/lib/Button";
 
 const circularXX = localFont({
   src: [
@@ -106,14 +107,36 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={circularXX.className}>
-      <Provider>
-        <MIReactNodeProvider>
-          <StyledComponentsRegistry>
-            {children}
-          </StyledComponentsRegistry>
-          <ToastRoot />
-        </MIReactNodeProvider>
-      </Provider>
+        <img
+          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop"
+          alt="Decorative overlay"
+          className="fixed top-4 right-4 w-24 h-24 rounded-xl shadow-lg object-cover z-50 border-2 border-white"
+        />
+        <Button type="secondary" size="large">
+          Explore Features
+        </Button>
+        <Provider>
+          <MIReactNodeProvider>
+            <StyledComponentsRegistry>
+              <div className="relative min-h-screen">
+                {children}
+                <svg
+                  className="fixed inset-0 w-full h-full pointer-events-none z-50"
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="none"
+                >
+                  <defs>
+                    <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+                      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(99, 102, 241, 0.08)" strokeWidth="1"/>
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#grid-pattern)" />
+                </svg>
+              </div>
+            </StyledComponentsRegistry>
+            <ToastRoot />
+          </MIReactNodeProvider>
+        </Provider>
       </body>
     </html>
   );
