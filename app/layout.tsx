@@ -105,7 +105,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={circularXX.className}>
+      <body className={circularXX.className + ' bg-red-500'}>
       <Provider>
         <MIReactNodeProvider>
           <StyledComponentsRegistry>
